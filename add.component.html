@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+    <form [formGroup]="formRegistro">
+    <div class="form-group">
+    <label for="albumId">Album Id</label>
+    <input type="number" class="form-control" id="albumId" formControlName="albumId">
+    <div *ngIf="albumId?.invalid && (albumId?.dirty || albumId?.touched)" class="alert alert-danger">
+       <div *ngIf="albumId?.errors?.['required']">
+       Requerido.
+       </div>
+       </div>
+       
+    </div>
+    <div class="form-group">
+    <label for="id">Id</label>
+    <input type="number" class="form-control" id="id" formControlName="id">
+    <div *ngIf="id?.invalid && (id?.dirty || id?.touched)" class="alert alert-danger">
+            <div *ngIf="id?.errors?.['required']">
+              Requerido.
+             </div>
+           </div>
+       
+    </div>
+    <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" formControlName="title">
+    <div *ngIf="title?.invalid && (title?.dirty || title?.touched)" class="alert alert-danger">
+        <div *ngIf="title?.errors?.['required']">
+       Requerido.
+       </div>
+        <div *ngIf="title?.errors?.['minlength']">
+       Al menos 2 caracteres.
+       </div>
+        </div>
+       
+    </div>
+   
+    <button type="submit" [disabled]="this.formRegistro.invalid" (click)="agregar()" class="btn btn-primary">Guardar</button>
+   
+    </form>
+    </div>
+    <div class="col-md-2"></div>
+    </div>
+   </div>
+       
+   

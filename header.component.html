@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+         <a class="navbar-brand" [routerLink]="['/list']" >Registros</a>
+       
+         <div class="d-flex">
+             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="texto">
+             <button class="btn btn-outline-success" type="submit" [routerLink]="['/search']" (click)="buscar()">Search</button>
+         </div>
+    </div>
+   </nav>
